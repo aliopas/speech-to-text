@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;600;700&display=swap');
+
+:root {
+  --primary-color: #2e7d32;
+  /* Quranic Green */
+  --secondary-color: #fdd835;
+  /* Gold */
+  --bg-dark: #121212;
+  --text-light: #ffffff;
+
+  --primary-hue: 145;
+  /* Green */
+  --bg-color: #121212;
+  --surface-color: #1e1e1e;
+  --text-primary: #ffffff;
+  --text-secondary: #aaaaaa;
+
+  --success-color: #4caf50;
+  --error-color: #f44336;
+}
+
+body {
+  margin: 0;
+  font-family: 'IBM Plex Sans Arabic', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  direction: rtl;
+  overflow-x: hidden;
+}
+
+/* --- Intro Overlay --- */
+.intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #0d1b1e 0%, #004d40 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.intro-overlay.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.intro-content {
+  text-align: center;
+  color: white;
+}
+
+.intro-icon {
+  font-size: 5rem;
+  display: block;
+  margin-bottom: 2rem;
+}
+
+/* Animations */
+.bounce-in {
+  animation: bounceIn 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+}
+
+.slide-up {
+  animation: slideUpIntro 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation-delay: 0.3s;
+  font-size: 3.5rem;
+  color: var(--secondary-color);
+  margin: 1rem 0;
+  font-family: 'Amiri', serif;
+}
+
+.fade-in-delay {
+  animation: fadeIn 1s ease-in both;
+  animation-delay: 0.8s;
+  font-size: 1.5rem;
+  opacity: 0.8;
+  font-weight: 300;
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  60% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUpIntro {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/* Existing Styles Override */
+.app-container {
+  background-color: var(--surface-color);
+  color: var(--text-primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.quran-text {
+  color: var(--text-primary);
+}
+
+.candidate {
+  background: #333;
+  color: #eee;
+  border-color: #444;
+}

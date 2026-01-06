@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المُقيم القرآني الذكي - Quranic Pronunciation Assessment</title>
+    <!-- Google Fonts: Amiri for Quranic text, IBM Plex Sans Arabic for UI -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <span class="icon">🎤</span>
+                <h1>المُقيم القرآني</h1>
+            </div>
+            <div class="status-badge" id="connection-status">جاهز</div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <!-- Progress / Surah Info -->
+            <div class="info-bar">
+                <span id="surah-name">سورة ...</span>
+                <span id="ayah-counter">الآية 0 / 0</span>
+            </div>
+
+            <!-- Ayah Display -->
+            <div class="ayah-container">
+                <p id="ayah-text" class="quran-text">
+                    <!-- Text will be injected here -->
+                    جاري تحميل الآية...
+                </p>
+            </div>
+
+            <!-- Candidates (Visual Hints) -->
+            <div class="candidates-container">
+                <p class="hint-label">الكلمات المقترحة:</p>
+                <div class="candidates-list" id="candidates-list">
+                    <!-- Candidates will be injected here -->
+                    <span class="candidate">...</span>
+                    <span class="candidate">...</span>
+                    <span class="candidate">...</span>
+                </div>
+            </div>
+
+            <!-- Interaction Area -->
+            <div class="interaction-area">
+                <div id="recording-status" class="hidden">
+                    <div class="pulse-ring"></div>
+                    <span>جاري الاستماع...</span>
+                </div>
+
+                <div class="controls">
+                    <button id="record-btn" class="primary-btn">
+                        <span class="btn-icon">🎙️</span>
+                        ابدأ التلاوة
+                    </button>
+                    <!-- Dev Only: Simulate Input -->
+                    <!-- <input type="text" id="dev-input" placeholder="حاكي الإدخال الصوتي هنا..."> -->
+                </div>
+                
+                <div id="feedback-area" class="feedback-box hidden">
+                    <div class="feedback-icon"></div>
+                    <div class="feedback-content">
+                        <h3 id="feedback-title"></h3>
+                        <p id="feedback-message"></p>
+                    </div>
+                    <button id="retry-btn" class="secondary-btn hidden">أعد المحاولة</button>
+                    <button id="next-btn" class="primary-btn hidden">الآية التالية</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
