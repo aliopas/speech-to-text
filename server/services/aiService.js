@@ -10,9 +10,8 @@ const openai = new OpenAI({
 });
 
 // Initialize Groq
-// Note: .env has 'Groq-Api', sdk expects GROQ_API_KEY usually, so we pass it explicitly
-const apiKey = process.env['Groq-Api'];
-if (!apiKey) console.warn("Warning: Groq-Api key not found in .env");
+const apiKey = process.env.GROQ_API_KEY;
+if (!apiKey) console.warn("Warning: GROQ_API_KEY not found in environment");
 
 const groq = new Groq({
     apiKey: apiKey

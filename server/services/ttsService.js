@@ -17,7 +17,7 @@ const ttsService = {
 
             const voiceId = "pNInz6obpgDQGcFmaJgB"; // Adam (Male, Deep, Narration)
             const modelId = "eleven_multilingual_v2";
-            const apiKey = process.env['elevenlabs-api-key'];
+            const apiKey = process.env.ELEVENLABS_API_KEY;
 
             if (!apiKey) throw new Error("ElevenLabs API Key missing");
 
